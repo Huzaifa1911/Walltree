@@ -13,6 +13,8 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 import {VectorIconType} from 'Types';
 
+type TSpecificIcon = Omit<VectorIconType, 'name' | 'iconType'>;
+
 const VectorIcon = (props: VectorIconType) => {
   const {iconType, ...rest} = props;
 
@@ -45,3 +47,11 @@ const VectorIcon = (props: VectorIconType) => {
 };
 
 export default VectorIcon;
+
+export const DashboardIcon = (props: TSpecificIcon) => (
+  <VectorIcon iconType="Feather" name="align-left" {...props} />
+);
+
+export const SearchIcon = (props: TSpecificIcon) => (
+  <VectorIcon iconType="Feather" name="search" {...props} />
+);

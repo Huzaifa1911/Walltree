@@ -11,7 +11,8 @@ const Drawer = createDrawerNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer ref={NavigationService.navigationRef}>
-      <Drawer.Navigator screenOptions={{headerShown: false}}>
+      <Drawer.Navigator
+        screenOptions={{headerShown: false, drawerType: 'slide'}}>
         <Drawer.Screen name={NavigateTo.BOTTOM_TABS} component={TabNavigator} />
       </Drawer.Navigator>
     </NavigationContainer>

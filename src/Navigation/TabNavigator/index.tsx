@@ -3,8 +3,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import {TabsConfig} from './config';
-import {AppTabBar, TabIcon} from 'Components';
-import {View} from 'react-native';
+import {AppHeader, AppTabBar, TabIcon} from 'Components';
 
 const Tab = createBottomTabNavigator();
 
@@ -13,9 +12,7 @@ const TabNavigator = () => {
     <Tab.Navigator
       safeAreaInsets={{bottom: 25}}
       tabBar={props => <AppTabBar {...props} />}
-      screenOptions={{
-        headerShown: false,
-      }}>
+      screenOptions={{header: () => <AppHeader />}}>
       {TabsConfig.map((tab, index) => (
         <Tab.Screen
           key={index}
