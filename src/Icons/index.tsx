@@ -1,5 +1,4 @@
 import React from 'react';
-import {Case, Default, Switch} from 'react-if';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -16,46 +15,33 @@ import {VectorIconType} from 'Types';
 
 const VectorIcon = (props: VectorIconType) => {
   const {iconType, ...rest} = props;
-  return (
-    <Switch>
-      <Case condition={iconType === 'AntDesign'}>
-        <AntDesign {...rest} />
-      </Case>
-      <Case condition={iconType === 'Feather'}>
-        <Feather {...rest} />
-      </Case>
-      <Case condition={iconType === 'FontAwesome'}>
-        <FontAwesome {...rest} />
-      </Case>
-      <Case condition={iconType === 'SimpleLineIcons'}>
-        <SimpleLineIcons {...rest} />
-      </Case>
-      <Case condition={iconType === 'FontAwesome5'}>
-        <FontAwesome5 {...rest} />
-      </Case>
-      <Case condition={iconType === 'Entypo'}>
-        <Entypo {...rest} />
-      </Case>
-      <Case condition={iconType === 'Foundation'}>
-        <Foundation {...rest} />
-      </Case>
-      <Case condition={iconType === 'Ionicons'}>
-        <Ionicons {...rest} />
-      </Case>
-      <Case condition={iconType === 'MaterialCommunityIcons'}>
-        <MaterialCommunityIcons {...rest} />
-      </Case>
-      <Case condition={iconType === 'MaterialIcons'}>
-        <MaterialIcons {...rest} />
-      </Case>
-      <Case condition={iconType === 'Octicons'}>
-        <Octicons {...rest} />
-      </Case>
-      <Default>
-        <></>
-      </Default>
-    </Switch>
-  );
+
+  switch (iconType) {
+    case 'AntDesign':
+      return <AntDesign {...rest} />;
+    case 'Entypo':
+      return <Entypo {...rest} />;
+    case 'Feather':
+      return <Feather {...rest} />;
+    case 'FontAwesome':
+      return <FontAwesome {...rest} />;
+    case 'FontAwesome5':
+      return <FontAwesome5 {...rest} />;
+    case 'Foundation':
+      return <Foundation {...rest} />;
+    case 'Ionicons':
+      return <Ionicons {...rest} />;
+    case 'MaterialCommunityIcons':
+      return <MaterialCommunityIcons {...rest} />;
+    case 'MaterialIcons':
+      return <MaterialIcons {...rest} />;
+    case 'Octicons':
+      return <Octicons {...rest} />;
+    case 'SimpleLineIcons':
+      return <SimpleLineIcons {...rest} />;
+    default:
+      return <></>;
+  }
 };
 
 export default VectorIcon;
