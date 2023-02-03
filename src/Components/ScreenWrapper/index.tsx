@@ -1,5 +1,5 @@
 import {ViewProps, ScrollViewProps} from 'react-native';
-import React from 'react';
+import React, {PropsWithChildren} from 'react';
 import {Case, Default, Switch} from 'react-if';
 import {KeyboardAwareScrollViewProps} from 'react-native-keyboard-aware-scroll-view';
 
@@ -14,10 +14,9 @@ interface IProps {
   viewProps?: ViewProps;
   scrollViewProps?: ScrollViewProps;
   keyboardAwareScrollViewProps?: KeyboardAwareScrollViewProps;
-  children: JSX.Element;
 }
 
-const ScreenWrapper = (props: IProps) => {
+const ScreenWrapper = (props: PropsWithChildren<IProps>) => {
   const {
     type = 'none',
     children,

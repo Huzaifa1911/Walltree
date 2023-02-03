@@ -14,6 +14,7 @@
       "Services/*": ["src/Services/*"],
       "Styles/*": ["src/Styles/*"],
       "Utils/*": ["src/Utils/*"],
+      "Types/*": ["src/Types/*"],
       "src/*": ["src/*"]
     },
     "types": ["react-native", "jest", "styled-components-react-native"],
