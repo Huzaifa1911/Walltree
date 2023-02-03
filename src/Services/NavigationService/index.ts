@@ -1,5 +1,6 @@
 import {
   CommonActions,
+  DrawerActions,
   createNavigationContainerRef,
 } from '@react-navigation/native';
 
@@ -13,4 +14,12 @@ const navigate = (route: string, params: any) => {
   } catch (error) {}
 };
 
-export default {navigationRef, navigate};
+const openDrawer = () => {
+  try {
+    if (navigationRef.isReady()) {
+      navigationRef.dispatch(DrawerActions.openDrawer());
+    }
+  } catch (error) {}
+};
+
+export default {navigationRef, navigate, openDrawer};
