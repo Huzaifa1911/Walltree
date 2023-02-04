@@ -4,13 +4,14 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import {TabsConfig} from './config';
 import {AppHeader, AppTabBar, TabIcon} from 'Components';
+import {isIphoneX} from 'react-native-iphone-x-helper';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
   return (
     <Tab.Navigator
-      safeAreaInsets={{bottom: 25}}
+      safeAreaInsets={{bottom: isIphoneX() ? 25 : 20}}
       tabBar={props => <AppTabBar {...props} />}
       screenOptions={{header: () => <AppHeader />}}>
       {TabsConfig.map((tab, index) => (

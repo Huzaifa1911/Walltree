@@ -1,4 +1,4 @@
-import {ViewProps, ScrollViewProps} from 'react-native';
+import {ViewProps, ScrollViewProps, StatusBar} from 'react-native';
 import React, {PropsWithChildren} from 'react';
 import {Case, Default, Switch} from 'react-if';
 import {KeyboardAwareScrollViewProps} from 'react-native-keyboard-aware-scroll-view';
@@ -8,6 +8,7 @@ import {
   ScreenScrollView,
   ScreenView,
 } from './styles';
+import {AppTheme} from 'Assets';
 
 interface IProps {
   type?: 'scroll' | 'none' | 'keyboard';
@@ -25,19 +26,25 @@ const ScreenWrapper = (props: PropsWithChildren<IProps>) => {
     keyboardAwareScrollViewProps,
   } = props;
   return (
-    <Switch>
-      <Case condition={type === 'scroll'}>
-        <ScreenScrollView {...scrollViewProps}>{children}</ScreenScrollView>
-      </Case>
-      <Case condition={type === 'keyboard'}>
-        <ScreenKeyboardAwareScrollView {...keyboardAwareScrollViewProps}>
-          {children}
-        </ScreenKeyboardAwareScrollView>
-      </Case>
-      <Default>
-        <ScreenView {...viewProps}>{children}</ScreenView>
-      </Default>
-    </Switch>
+    <>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={AppTheme.colors.background}
+      />
+      <Switch>
+        <Case condition={type === 'scroll'}>
+          <ScreenScrollView {...scrollViewProps}>{children}</ScreenScrollView>
+        </Case>
+        <Case condition={type === 'keyboard'}>
+          <ScreenKeyboardAwareScrollView {...keyboardAwareScrollViewProps}>
+            {children}
+          </ScreenKeyboardAwareScrollView>
+        </Case>
+        <Default>
+          <ScreenView {...viewProps}>{children}</ScreenView>
+        </Default>
+      </Switch>
+    </>
   );
 };
 

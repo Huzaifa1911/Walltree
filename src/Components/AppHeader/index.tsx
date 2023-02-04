@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
-import {When} from 'react-if';
 
 import {StyledContainer, StyledSearchBarWrapper} from './styles';
 import {DashboardIcon, SearchIcon} from 'Icons';
@@ -19,12 +18,14 @@ const AppHeader = () => {
       transform: [
         {scaleX: withTiming(isSearchActive ? 1 : 0, {duration: 300})},
       ],
+      display: isSearchActive ? 'flex' : 'none',
     }),
     [isSearchActive],
   );
 
   const iconStyle = useAnimatedStyle(
     () => ({
+      display: !isSearchActive ? 'flex' : 'none',
       transform: [{scale: withTiming(isSearchActive ? 0 : 1, {duration: 300})}],
     }),
     [isSearchActive],
@@ -44,13 +45,12 @@ const AppHeader = () => {
       </StyledSearchBarWrapper>
 
       {/* Icon */}
-      <When condition={!isSearchActive}>
-        <Animated.View style={iconStyle}>
-          <IconButton onPress={updateActiveStatus} activeOpacity={0.6}>
-            <SearchIcon size={30} color={AppTheme.colors.surface} />
-          </IconButton>
-        </Animated.View>
-      </When>
+
+      <Animated.View style={iconStyle}>
+        <IconButton onPress={updateActiveStatus} activeOpacity={0.6}>
+          <SearchIcon size={30} color={AppTheme.colors.surface} />
+        </IconButton>
+      </Animated.View>
     </StyledContainer>
   );
 };
