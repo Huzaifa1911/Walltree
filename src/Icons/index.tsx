@@ -59,3 +59,27 @@ export const SearchIcon = (props: TSpecificIcon) => (
 export const CloseIcon = (props: TSpecificIcon) => (
   <VectorIcon iconType="AntDesign" name="close" {...props} />
 );
+
+export const SettingIcon = (props: TSpecificIcon) => (
+  <VectorIcon iconType="Feather" name="settings" {...props} />
+);
+
+export const LikeIcon = (props: TSpecificIcon) => (
+  <VectorIcon iconType="AntDesign" name="like2" {...props} />
+);
+
+export const ShareIcon = (props: TSpecificIcon) => (
+  <VectorIcon iconType="AntDesign" name="sharealt" {...props} />
+);
+
+export const DocumentIcon = (props: TSpecificIcon) => (
+  <VectorIcon iconType="Ionicons" name="document-text-outline" {...props} />
+);
+
+export const PrivacyIcon = (props: TSpecificIcon) => (
+  <VectorIcon
+    iconType="MaterialCommunityIcons"
+    name="message-text-lock-outline"
+    {...props}
+  />
+);

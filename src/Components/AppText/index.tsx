@@ -17,7 +17,7 @@ interface IAppTextProps {
   textTransform?: 'capitalize' | 'uppercase' | 'lowercase' | 'none';
   color?: string;
   size?: number;
-  kind?: keyof typeof AppTheme.fonts;
+  kind?: (typeof AppTheme.fonts)[keyof typeof AppTheme.fonts];
   textProps?: TextProps;
 }
 
@@ -33,7 +33,7 @@ const AppText = (props: IAppTextProps) => {
     color = AppTheme.colors.surface,
     textAlign = 'left',
     textDecorationLine = 'none',
-    kind,
+    kind = 'Poppins-Regular',
     size = 16,
   } = props;
   const disabled = !onPress;

@@ -6,14 +6,20 @@ type TScale = {
   width: number;
 };
 
-export const StyledContainer = styled(View)(({theme}: CustomThemeType) => ({
-  backgroundColor: theme?.colors.black,
-  paddingTop: 10,
-  marginTop: -20,
-  alignItems: 'center',
-  justifyContent: 'center',
-  borderRadius: 16,
-}));
+export const StyledContainer = styled(View)(
+  ({theme, isDrawerOpen}: {isDrawerOpen: boolean} & CustomThemeType) => ({
+    backgroundColor: theme?.colors.black,
+    paddingTop: 10,
+    marginTop: -20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 16,
+    elevation: '3',
+    shadowColor: 'black',
+    shadowOpacity: isDrawerOpen ? '1' : '0.2',
+    shadowRadius: 20.0,
+  }),
+);
 
 export const ButtonWrapper = styled(View)(({width}: TScale) => ({
   flexDirection: 'row' as const,
