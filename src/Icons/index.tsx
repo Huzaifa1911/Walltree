@@ -55,3 +55,7 @@ export const DashboardIcon = (props: TSpecificIcon) => (
 export const SearchIcon = (props: TSpecificIcon) => (
   <VectorIcon iconType="Feather" name="search" {...props} />
 );
+
+export const CloseIcon = (props: TSpecificIcon) => (
+  <VectorIcon iconType="AntDesign" name="close" {...props} />
+);
