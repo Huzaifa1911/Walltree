@@ -36,12 +36,8 @@ const AppHeader = () => {
 
   return (
     <StyledContainer isDrawerOpen={isOpen}>
-      <IconButton>
-        <DashboardIcon
-          onPress={onDashboardPress}
-          size={30}
-          color={AppTheme.colors.surface}
-        />
+      <IconButton onPress={onDashboardPress}>
+        <DashboardIcon size={30} color={AppTheme.colors.surface} />
       </IconButton>
 
       <StyledSearchBarWrapper style={searchBarStyles}>
@@ -51,7 +47,7 @@ const AppHeader = () => {
       {/* Icon */}
 
       <Animated.View style={iconStyle}>
-        <IconButton onPress={updateActiveStatus} activeOpacity={0.6}>
+        <IconButton onPress={updateActiveStatus}>
           <SearchIcon size={30} color={AppTheme.colors.surface} />
         </IconButton>
       </Animated.View>

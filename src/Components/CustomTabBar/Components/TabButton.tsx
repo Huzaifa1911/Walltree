@@ -26,7 +26,7 @@ const TabButton = (props: ITabButtonProps) => {
 
       <When condition={isFocused}>
         <Animated.View style={animationStyle}>
-          <Spacer top={5} />
+          <Spacer top={2} />
           <AppText
             size={12}
             kind={isFocused ? 'Poppins-SemiBold' : 'Poppins-Regular'}>
