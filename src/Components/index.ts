@@ -6,3 +6,5 @@ export {default as TabIcon} from './CustomTabBar/Components/TabIcon';
 export {default as TabButton} from './CustomTabBar/Components/TabButton';
 export {default as AppHeader} from './AppHeader';
 export {default as IconButton} from './Commons/IconButton';
+export {default as AppInputField} from './AppInputField';
+export {default as AppSearchBar} from './AppSearchBar';

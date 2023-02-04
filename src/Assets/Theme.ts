@@ -7,10 +7,10 @@ const AppTheme = {
     black: '#0c0e1c',
   },
   fonts: {
-    Thin: 'Poppins-Thin.otf',
-    Regular: 'Poppins-Regular.otf',
-    Medium: 'Poppins-SemiBold.otf',
-    Bold: 'Poppins-Bold.otf',
+    Thin: 'Poppins-Thin',
+    Regular: 'Poppins-Regular',
+    Medium: 'Poppins-SemiBold',
+    Bold: 'Poppins-Bold',
   },
 };
 
