@@ -5,32 +5,46 @@ import {
   DrawerItem,
 } from '@react-navigation/drawer';
 import {
-  Avatar,
   StyledContainer,
-  StyledContent,
+  Row,
+  StyledProductLogo,
   StyledTextWrapper,
   StyledWrapper,
 } from './styles';
-import {AppText} from 'Components';
-import {AppTheme} from 'Assets';
+import {AppAvatar, AppText} from 'Components';
 
 import {DrawerItemConfig} from './config';
+import {AppTheme} from 'Assets';
+import {getNameLiterals} from 'Utils';
+
+const NAME = 'Huzaifa Arshad';
+const Location = 'Islamabad';
 
 const AppDrawer = (props: DrawerContentComponentProps) => {
   const color = AppTheme.colors.surface;
   return (
     <StyledContainer>
-      {/* Top Content */}
+      <StyledProductLogo />
+
       <StyledWrapper>
-        <StyledContent>
+        <Row>
           {/* Avatar */}
-          <Avatar />
+          <AppAvatar.Text
+            label={getNameLiterals(NAME)}
+            size={70}
+            labelStyle={{size: 30, kind: 'Poppins-SemiBold'}}
+          />
+
           {/* User Info */}
           <StyledTextWrapper>
-            <AppText size={20}>Huzaifa</AppText>
-            <AppText size={10}>Islamabad</AppText>
+            <AppText size={20} numberOfLines={2}>
+              {NAME}
+            </AppText>
+            <AppText size={10} numberOfLines={2}>
+              {Location}
+            </AppText>
           </StyledTextWrapper>
-        </StyledContent>
+        </Row>
       </StyledWrapper>
 
       {/* Drawer Scroll Content */}

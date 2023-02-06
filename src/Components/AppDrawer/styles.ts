@@ -1,3 +1,4 @@
+import {ProductLogoHorizontal} from 'Icons';
 import {View} from 'react-native';
 import {isIphoneX} from 'react-native-iphone-x-helper';
 import styled from 'styled-components/native';
@@ -10,11 +11,12 @@ export const StyledContainer = styled(View)(({theme}: CustomThemeType) => ({
 
 export const StyledWrapper = styled(View)({
   paddingHorizontal: 16,
-  marginTop: 100,
+  marginTop: 60,
+  marginBottom: 20,
   justifyContent: 'space-between',
 });
 
-export const StyledContent = styled(View)({flexDirection: 'row' as const});
+export const Row = styled(View)({flexDirection: 'row' as const});
 
 export const StyledTextWrapper = styled(View)({
   justifyContent: 'center',
@@ -22,9 +24,9 @@ export const StyledTextWrapper = styled(View)({
   marginLeft: 10,
 });
 
-export const Avatar = styled(View)({
-  borderRadius: 50,
-  height: 80,
-  width: 80,
-  backgroundColor: 'gray',
+export const StyledProductLogo = styled(ProductLogoHorizontal)({
+  height: 25,
+  width: 130,
+  marginTop: 32,
+  marginLeft: 20,
 });

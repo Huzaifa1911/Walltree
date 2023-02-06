@@ -1,16 +1,15 @@
 import {Text, ViewStyle, StyleSheet, StyleProp} from 'react-native';
-import React, {useMemo} from 'react';
+import React, {PropsWithChildren, useMemo} from 'react';
 import {Else, If, Then} from 'react-if';
 
 import {ButtonWrapper, Wrapper} from './styles';
 import {AppTheme} from 'Assets';
 import {TextProps} from 'react-native';
 
-interface IAppTextProps {
+export interface IAppTextProps {
   onPress?: () => void;
   leftIcon?: React.ReactElement;
   rightIcon?: React.ReactElement;
-  children: React.ReactNode;
   containerStyle?: StyleProp<ViewStyle>;
   textAlign?: 'center' | 'left' | 'right' | 'justify' | 'auto';
   textDecorationLine?: 'underline' | 'none' | 'line-through';
@@ -19,9 +18,10 @@ interface IAppTextProps {
   size?: number;
   kind?: (typeof AppTheme.fonts)[keyof typeof AppTheme.fonts];
   textProps?: TextProps;
+  numberOfLines?: number;
 }
 
-const AppText = (props: IAppTextProps) => {
+const AppText = (props: PropsWithChildren<IAppTextProps>) => {
   const {
     onPress,
     children,
@@ -35,6 +35,7 @@ const AppText = (props: IAppTextProps) => {
     textDecorationLine = 'none',
     kind = 'Poppins-Regular',
     size = 16,
+    numberOfLines,
   } = props;
   const disabled = !onPress;
 
@@ -58,7 +59,10 @@ const AppText = (props: IAppTextProps) => {
       <Then>
         <Wrapper style={containerStyle}>
           {leftIcon}
-          <Text style={appTextStyles} {...textProps}>
+          <Text
+            numberOfLines={numberOfLines}
+            style={appTextStyles}
+            {...textProps}>
             {children}
           </Text>
           {rightIcon}
@@ -71,7 +75,10 @@ const AppText = (props: IAppTextProps) => {
           onPress={onPress}
           activeOpacity={0.6}>
           {leftIcon}
-          <Text style={appTextStyles} {...textProps}>
+          <Text
+            numberOfLines={numberOfLines}
+            style={appTextStyles}
+            {...textProps}>
             {children}
           </Text>
           {rightIcon}
