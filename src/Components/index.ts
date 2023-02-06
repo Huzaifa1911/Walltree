@@ -8,3 +8,5 @@ export {default as AppHeader} from './AppHeader';
 export {default as IconButton} from './Commons/IconButton';
 export {default as AppInputField} from './AppInputField';
 export {default as AppSearchBar} from './AppSearchBar';
+export {default as AppDrawer} from './AppDrawer';
+export {default as AppAvatar} from './AppAvatar';

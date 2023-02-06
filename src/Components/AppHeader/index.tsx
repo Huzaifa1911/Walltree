@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
+import {useDrawerStatus} from '@react-navigation/drawer';
 
 import {StyledContainer, StyledSearchBarWrapper} from './styles';
 import {DashboardIcon, SearchIcon} from 'Icons';
@@ -8,10 +9,7 @@ import {AppSearchBar, IconButton} from 'Components';
 import {NavigationService} from 'Services';
 
 const AppHeader = () => {
-  const onDashboardPress = () => NavigationService.openDrawer();
   const [isSearchActive, setIsSearchActive] = useState<boolean>(false);
-
-  const updateActiveStatus = () => setIsSearchActive(!isSearchActive);
 
   const searchBarStyles = useAnimatedStyle(
     () => ({
@@ -30,14 +28,16 @@ const AppHeader = () => {
     }),
     [isSearchActive],
   );
+
+  const isOpen = useDrawerStatus() === 'open';
+
+  const onDashboardPress = () => NavigationService.openDrawer();
+  const updateActiveStatus = () => setIsSearchActive(!isSearchActive);
+
   return (
-    <StyledContainer>
-      <IconButton>
-        <DashboardIcon
-          onPress={onDashboardPress}
-          size={30}
-          color={AppTheme.colors.surface}
-        />
+    <StyledContainer isDrawerOpen={isOpen}>
+      <IconButton onPress={onDashboardPress}>
+        <DashboardIcon size={30} color={AppTheme.colors.surface} />
       </IconButton>
 
       <StyledSearchBarWrapper style={searchBarStyles}>
@@ -47,7 +47,7 @@ const AppHeader = () => {
       {/* Icon */}
 
       <Animated.View style={iconStyle}>
-        <IconButton onPress={updateActiveStatus} activeOpacity={0.6}>
+        <IconButton onPress={updateActiveStatus}>
           <SearchIcon size={30} color={AppTheme.colors.surface} />
         </IconButton>
       </Animated.View>
