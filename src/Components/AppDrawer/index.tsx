@@ -32,6 +32,7 @@ const AppDrawer = (props: DrawerContentComponentProps) => {
           <AppAvatar.Text
             label={getNameLiterals(NAME)}
             size={70}
+            // eslint-disable-next-line react-native/no-inline-styles
             labelStyle={{size: 30, kind: 'Poppins-SemiBold'}}
           />
 
