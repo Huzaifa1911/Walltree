@@ -1,6 +1,3 @@
-import {BottomTabNavigationOptions} from '@react-navigation/bottom-tabs';
-
-import {AppTheme} from 'Assets';
 import {FavouritesScreen, HomeScreen, TrendingScreen} from 'Screens';
 import {TabConfig} from 'Types';
 import {NavigateTo} from 'Utils';

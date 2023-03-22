@@ -6,6 +6,9 @@ const AppTheme = {
     placeholder: '#E5E5E5',
     black: '#0c0e1c',
     blue: '#3C84AB',
+    green: '#599339',
+    pink: '#981475',
+    gold: '#CC933A',
   } as const,
   fonts: {
     Thin: 'Poppins-Thin',

@@ -10,3 +10,4 @@ export {default as AppInputField} from './AppInputField';
 export {default as AppSearchBar} from './AppSearchBar';
 export {default as AppDrawer} from './AppDrawer';
 export {default as AppAvatar} from './AppAvatar';
+export {default as CategoryCard} from './CategoryCard';
