@@ -1,12 +1,13 @@
 import React from 'react';
 
-import {ScreenWrapper} from 'Components';
-import {AppText} from 'Components';
+import {ScreenWrapper, Spacer} from 'Components';
+import WallpaperCategories from './components/WallpaperCategories';
 
 const HomeScreen = () => {
   return (
     <ScreenWrapper type="scroll">
-      <AppText>Home Screen</AppText>
+      <Spacer top={25} />
+      <WallpaperCategories />
     </ScreenWrapper>
   );
 };

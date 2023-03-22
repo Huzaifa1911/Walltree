@@ -24,3 +24,10 @@ export type TabConfig = {
   icon: {name: string; iconType: IconType};
   activeIcon: {name: string; iconType: IconType};
 };
+
+export type TWallpaperCategory = {
+  name: string;
+  image: string;
+  color: string;
+  value: string;
+};
